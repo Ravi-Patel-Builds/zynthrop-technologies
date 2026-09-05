@@ -1,0 +1,358 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <!-- Background Vignette -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stopColor="#22262F" />
+      <stop offset="60%" stopColor="#17191E" />
+      <stop offset="100%" stopColor="#111216" />
+    </radialGradient>
+
+    <!-- Deep Drop Shadow -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Metallic Gradients for Z Bevels -->
+    <!-- Top Chamfer Face (Catching top light) -->
+    <linearGradient id="metalLightTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#B6BFCB" />
+      <stop offset="50%" stopColor="#8793A3" />
+      <stop offset="100%" stopColor="#586374" />
+    </linearGradient>
+
+    <!-- Bottom Chamfer Face (Shaded underside) -->
+    <linearGradient id="metalDarkBot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#434B59" />
+      <stop offset="60%" stopColor="#2B323D" />
+      <stop offset="100%" stopColor="#1D222A" />
+    </linearGradient>
+
+    <!-- Left Chamfer Face -->
+    <linearGradient id="metalLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#9AA5B5" />
+      <stop offset="50%" stopColor="#6C7787" />
+      <stop offset="100%" stopColor="#4A5361" />
+    </linearGradient>
+
+    <!-- Right Chamfer Face -->
+    <linearGradient id="metalRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#434B59" />
+      <stop offset="100%" stopColor="#252B35" />
+    </linearGradient>
+
+    <!-- Diagonal Beam Metallic Gradient with subtle copper reflection -->
+    <linearGradient id="metalDiag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#8A96A7" />
+      <stop offset="35%" stopColor="#636E7E" />
+      <stop offset="65%" stopColor="#82665B" />
+      <stop offset="100%" stopColor="#454D5A" />
+    </linearGradient>
+
+    <!-- Arrow Vibrant Coral-to-Peach Gradient -->
+    <linearGradient id="arrowGrad" x1="330" y1="620" x2="720" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#FF5533" />
+      <stop offset="40%" stopColor="#FF7A59" />
+      <stop offset="75%" stopColor="#FF9371" />
+      <stop offset="100%" stopColor="#FFB191" />
+    </linearGradient>
+
+    <!-- Arrow Bevel Light -->
+    <linearGradient id="arrowLightBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFE0D6" stopOpacity="0.8" />
+      <stop offset="100%" stopColor="#FF7A59" stopOpacity="0.1" />
+    </linearGradient>
+
+    <!-- Arrow Bevel Dark -->
+    <linearGradient id="arrowDarkBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#C83B19" />
+      <stop offset="100%" stopColor="#7E1C05" />
+    </linearGradient>
+
+    <!-- Copper Circuit Trace Gradients -->
+    <linearGradient id="trace1Grad" x1="280" y1="685" x2="365" y2="770" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#6C7788" />
+      <stop offset="100%" stopColor="#555E6D" />
+    </linearGradient>
+
+    <linearGradient id="trace2Grad" x1="385" y1="685" x2="470" y2="770" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#A46E60" />
+      <stop offset="100%" stopColor="#7A564D" />
+    </linearGradient>
+
+    <linearGradient id="trace3Grad" x1="490" y1="685" x2="575" y2="770" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#FF7A59" />
+      <stop offset="100%" stopColor="#B8553C" />
+    </linearGradient>
+
+    <!-- Typography Metallic Gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="65%" stopColor="#E9EDF3" />
+      <stop offset="100%" stopColor="#C4CCD8" />
+    </linearGradient>
+
+    <!-- Text Bevel Shadow Filter -->
+    <filter id="textBevel" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="1000" height="1000" fill="url(#bgGlow)" />
+
+  <!-- Subtle Circuit Traces on Background (textured atmosphere) -->
+  <g opacity="0.07" stroke="#8A94A6" stroke-width="2" fill="none">
+    <path d="M 100 200 H 250 L 320 270 V 450" />
+    <path d="M 850 300 H 750 L 680 370" />
+    <path d="M 150 850 H 300 L 380 770" />
+    <path d="M 800 800 H 650 L 580 730 V 620" />
+    <circle cx="100" cy="200" r="4" fill="#8A94A6" />
+    <circle cx="850" cy="300" r="4" fill="#8A94A6" />
+    <circle cx="150" cy="850" r="4" fill="#8A94A6" />
+    <circle cx="800" cy="800" r="4" fill="#8A94A6" />
+  </g>
+
+  <!-- Central Ambient Coral Glow behind Arrow & Core -->
+  <circle cx="480" cy="420" r="240" fill="#FF7A59" opacity="0.09" filter="url(#softGlow)" />
+
+  <!-- MAIN EMBLEM GROUP WITH REALISTIC 3D DROP SHADOW -->
+  <g filter="url(#dropShadow)">
+
+    <!-- ========================================== -->
+    <!-- 3 CIRCUIT BOARD TRACES & CONTACT PADS (BOTTOM) -->
+    <!-- ========================================== -->
+    <!-- Trace 1 (Left, Cool Slate/Gunmetal) -->
+    <g>
+      <!-- Trace Shadow & Line -->
+      <line x1="280" y1="675" x2="365" y2="760" stroke="#12151B" stroke-width="24" stroke-linecap="round" />
+      <line x1="280" y1="675" x2="365" y2="760" stroke="url(#trace1Grad)" stroke-width="18" stroke-linecap="round" />
+      <line x1="280" y1="675" x2="365" y2="760" stroke="#8D9BB0" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+      <!-- Outer Ring Pad -->
+      <circle cx="365" cy="760" r="32" fill="#151820" stroke="url(#trace1Grad)" stroke-width="14" />
+      <circle cx="365" cy="760" r="32" fill="none" stroke="#8D9BB0" stroke-width="3" opacity="0.5" />
+      <!-- Inner Hole -->
+      <circle cx="365" cy="760" r="14" fill="#13151A" />
+    </g>
+
+    <!-- Trace 2 (Middle, Warm Copper/Bronze) -->
+    <g>
+      <line x1="385" y1="675" x2="470" y2="760" stroke="#12151B" stroke-width="24" stroke-linecap="round" />
+      <line x1="385" y1="675" x2="470" y2="760" stroke="url(#trace2Grad)" stroke-width="18" stroke-linecap="round" />
+      <line x1="385" y1="675" x2="470" y2="760" stroke="#D39788" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+      <!-- Outer Ring Pad -->
+      <circle cx="470" cy="760" r="32" fill="#151820" stroke="url(#trace2Grad)" stroke-width="14" />
+      <circle cx="470" cy="760" r="32" fill="none" stroke="#D39788" stroke-width="3" opacity="0.5" />
+      <circle cx="470" cy="760" r="14" fill="#13151A" />
+    </g>
+
+    <!-- Trace 3 (Right, Radiant Glowing Coral) -->
+    <g>
+      <line x1="490" y1="675" x2="575" y2="760" stroke="#12151B" stroke-width="24" stroke-linecap="round" />
+      <line x1="490" y1="675" x2="575" y2="760" stroke="url(#trace3Grad)" stroke-width="18" stroke-linecap="round" />
+      <line x1="490" y1="675" x2="575" y2="760" stroke="#FFA07A" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+      <!-- Outer Ring Pad -->
+      <circle cx="575" cy="760" r="32" fill="#151820" stroke="url(#trace3Grad)" stroke-width="14" />
+      <circle cx="575" cy="760" r="32" fill="none" stroke="#FFA07A" stroke-width="3" opacity="0.6" />
+      <circle cx="575" cy="760" r="14" fill="#13151A" />
+    </g>
+
+
+    <!-- ========================================== -->
+    <!-- THE METALLIC 'Z' BODY WITH CHISELED BEVELS -->
+    <!-- ========================================== -->
+
+    <!-- Base / Back Underlay of the 'Z' -->
+    <path
+      d="
+        M 198 150 
+        H 558 
+        V 204 
+        H 248 
+        V 294 
+        H 558 
+        L 190 718 
+        H 708 
+        V 632 
+        H 526 
+        V 576 
+        H 708 
+        V 718 
+        H 190 
+        V 632 
+        L 508 248 
+        H 198 
+        Z
+      "
+      fill="#1A1E26"
+    />
+
+    <!-- --- TOP ARM OF 'Z' (With inner slot and chiseled edges) --- -->
+    <!-- Top horizontal outer bar: (198,150) to (558,150) down to (558,204), inner slot (248,204) to (508,204) -->
+    
+    <!-- Top-most face (catching light from above) -->
+    <polygon points="198,150 558,150 538,174 218,174" fill="url(#metalLightTop)" />
+    <!-- Top-left outer bevel -->
+    <polygon points="198,150 218,174 218,274 198,294" fill="url(#metalLeft)" />
+    <!-- Top-right outer end-cap -->
+    <polygon points="558,150 558,204 538,188 538,174" fill="url(#metalRight)" />
+
+    <!-- Top arm upper inner face -->
+    <polygon points="218,174 538,174 538,188 218,188" fill="url(#metalDarkBot)" />
+    
+    <!-- Top slot lower bar upper face -->
+    <polygon points="248,204 508,204 492,218 264,218" fill="url(#metalLightTop)" />
+    <!-- Top slot lower bar lower face -->
+    <polygon points="248,248 508,248 492,234 264,234" fill="url(#metalDarkBot)" />
+    <!-- Top slot left inner end-wall -->
+    <polygon points="248,204 264,218 264,234 248,248" fill="url(#metalLeft)" />
+
+    <!-- Top arm lower face -->
+    <polygon points="198,294 558,294 538,274 218,274" fill="url(#metalDarkBot)" />
+
+
+    <!-- --- MAIN METALLIC DIAGONAL STRUT --- -->
+    <!-- Runs from top-right down to bottom-left: (508,248) to (190,632) -->
+    <polygon 
+      points="528,248 376,432 190,632 238,632 422,432 558,248" 
+      fill="url(#metalDiag)" 
+    />
+    <!-- Diagonal highlight ridge -->
+    <line x1="538" y1="248" x2="208" y2="632" stroke="#BAC5D4" stroke-width="3" opacity="0.6" />
+    <line x1="520" y1="248" x2="190" y2="632" stroke="#181B22" stroke-width="3" opacity="0.8" />
+
+
+    <!-- --- BOTTOM ARM OF 'Z' (With inner slot and chiseled edges) --- -->
+    <!-- Bottom horizontal outer bar: (190,718) to (708,718) up to (708,632) -->
+    
+    <!-- Bottom arm lower face (shaded underside) -->
+    <polygon points="190,718 708,718 688,698 210,698" fill="url(#metalDarkBot)" />
+    <!-- Bottom-left outer bevel -->
+    <polygon points="190,632 190,718 210,698 210,652" fill="url(#metalLeft)" />
+    <!-- Bottom-right outer end-cap -->
+    <polygon points="708,632 708,718 688,698 688,652" fill="url(#metalRight)" />
+
+    <!-- Bottom arm upper face (catching light) -->
+    <polygon points="210,698 688,698 688,674 210,674" fill="url(#metalLightTop)" />
+
+    <!-- Bottom slot upper rail: (526,632) to (708,632) -->
+    <polygon points="526,632 708,632 688,648 542,648" fill="url(#metalLightTop)" />
+    <!-- Bottom slot inside recess -->
+    <polygon points="526,672 708,672 688,656 542,656" fill="url(#metalDarkBot)" />
+    <!-- Bottom slot left inner end-wall -->
+    <polygon points="526,632 542,648 542,656 526,672" fill="url(#metalLeft)" />
+
+
+    <!-- ========================================== -->
+    <!-- THE GLOWING CORAL-TO-PEACH RISING ARROW    -->
+    <!-- ========================================== -->
+    <!-- The Arrow Shaft starts along the diagonal from (335,622) and shoots up through (540,360) past the top bar to (630,230) -->
+    <g>
+      <!-- Subtle glow around arrow -->
+      <path
+        d="M 335 624 L 626 238 L 658 260 L 372 648 Z"
+        fill="#FF7A59"
+        opacity="0.25"
+        filter="url(#softGlow)"
+      />
+
+      <!-- Arrow Shaft Main Body -->
+      <polygon
+        points="335,622 628,236 662,260 372,648"
+        fill="url(#arrowGrad)"
+      />
+
+      <!-- Arrow Shaft Top-Left Highlight Edge (Chiseled bevel) -->
+      <line x1="335" y1="622" x2="628" y2="236" stroke="#FFEAE2" stroke-width="4" stroke-linecap="round" opacity="0.85" />
+      <!-- Arrow Shaft Bottom-Right Shadow Edge -->
+      <line x1="372" y1="648" x2="662" y2="260" stroke="#C83B19" stroke-width="4" stroke-linecap="round" opacity="0.9" />
+
+      <!-- Inner Ridge on Shaft -->
+      <line x1="353" y1="635" x2="645" y2="248" stroke="#FFA07A" stroke-width="2" opacity="0.6" />
+
+      <!-- Arrow Head (Pointing up-right at 45° angle) -->
+      <!-- Tip: (720, 138) -->
+      <!-- Left barb: (586, 192) -->
+      <!-- Right barb: (702, 286) -->
+      <!-- Base notch: (632, 238) -->
+      <g>
+        <!-- Arrowhead Shadow -->
+        <polygon points="582,194 722,138 704,288 632,240" fill="#B32D0D" opacity="0.4" />
+
+        <!-- Arrowhead Main Polygon -->
+        <polygon
+          points="586,192 720,138 702,286 632,238"
+          fill="url(#arrowGrad)"
+        />
+
+        <!-- Arrowhead Left Chamfer (Bright Highlight) -->
+        <polygon
+          points="586,192 720,138 650,188"
+          fill="#FFFFFF"
+          opacity="0.32"
+        />
+
+        <!-- Arrowhead Right Chamfer (Shaded) -->
+        <polygon
+          points="702,286 720,138 676,242"
+          fill="#8A1E07"
+          opacity="0.38"
+        />
+
+        <!-- Arrowhead Ridge Line -->
+        <line x1="632" y1="238" x2="720" y2="138" stroke="#FFF0EA" stroke-width="4" stroke-linecap="round" />
+        
+        <!-- Arrowhead Outer Glow Contour -->
+        <polyline
+          points="586,192 720,138 702,286"
+          stroke="#FFA07A"
+          stroke-width="2.5"
+          fill="none"
+        />
+      </g>
+    </g>
+
+    <!-- Warm Bounce Light Reflection on Nearby Metallic Faces -->
+    <polygon points="528,248 558,248 422,432 396,432" fill="#FF7A59" opacity="0.28" />
+    <polygon points="376,432 402,432 248,600 226,600" fill="#FFA07A" opacity="0.22" />
+
+  </g> <!-- End of main emblem drop shadow group -->
+
+
+  <!-- ========================================== -->
+  <!-- TYPOGRAPHY: "ZYNTHROP TECHNOLOGIES"        -->
+  <!-- ========================================== -->
+  <g filter="url(#textBevel)">
+    <!-- "ZYNTHROP" -->
+    <text
+      x="550"
+      y="472"
+      fill="url(#textGrad)"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Montserrat', 'Syne', sans-serif"
+      font-size="62"
+      font-weight="800"
+      letter-spacing="5"
+    >
+      ZYNTHROP
+    </text>
+
+    <!-- "TECHNOLOGIES" -->
+    <text
+      x="550"
+      y="522"
+      fill="url(#textGrad)"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Montserrat', 'Syne', sans-serif"
+      font-size="34"
+      font-weight="700"
+      letter-spacing="9"
+    >
+      TECHNOLOGIES
+    </text>
+  </g>
+
+</svg>
