@@ -1,21 +1,5 @@
-﻿{
+{
   "rewrites": [
-    {
-      "source": "/googleca78d5990ae9b2c3.html",
-      "destination": "/googleca78d5990ae9b2c3.html"
-    },
-    {
-      "source": "/((?!assets/.*).*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/googleca78d5990ae9b2c3.html",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-store" }
-      ]
-    }
+    { "source": "/((?!\\.html$)(?!assets/).*)", "destination": "/index.html" }
   ]
 }
