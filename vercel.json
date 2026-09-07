@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/((?!\\.html$)(?!assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!\\.html$)(?!\\.txt$)(?!\\.xml$)(?!assets/).*)", "destination": "/index.html" }
   ]
 }

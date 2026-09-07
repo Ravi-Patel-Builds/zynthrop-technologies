@@ -1,6 +1,8 @@
-﻿# Zynthrop Technologies
+# Zynthrop Technologies
 
 > **Production Systems Engineering** — High-performance web applications, distributed backend services, and low-latency AI integrations.
+
+**Live:** https://zynthrop-technologies.vercel.app
 
 ---
 
@@ -30,6 +32,7 @@ Built entirely with a modern React + Vite + TypeScript stack, it features:
 | **Backend** | Node.js, Express 4 |
 | **Build** | Vite, esbuild, tsx |
 | **Type Safety** | TypeScript ~5.8, strict mode |
+| **Hosting** | Vercel (Edge Network) |
 
 ---
 
@@ -44,7 +47,7 @@ Built entirely with a modern React + Vite + TypeScript stack, it features:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/zynthrop-technologies.git
+git clone https://github.com/Ravi-Patel-Builds/zynthrop-technologies.git
 cd zynthrop-technologies
 
 # 2. Install all dependencies
@@ -74,6 +77,11 @@ The dev server starts at **http://localhost:3000** with hot module reloading ena
 
 ```
 zynthrop-technologies/
+├── public/
+│   ├── favicon.svg
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── zynthrop-logo.svg
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.tsx              # Sticky nav with active-section tracking
@@ -95,11 +103,22 @@ zynthrop-technologies/
 │   ├── types.ts                    # Shared TypeScript interfaces
 │   ├── index.css                   # Global styles and Tailwind base
 │   └── main.tsx                    # React entry point
-├── index.html                      # HTML shell
+├── vercel.json                     # Vercel SPA routing config
+├── index.html                      # HTML shell with SEO meta tags
 ├── package.json
 ├── tsconfig.json
 └── vite.config.ts
 ```
+
+---
+
+## Deployment
+
+Deployed on **Vercel** with automatic CI/CD from the `main` branch.
+
+- **Live URL:** https://zynthrop-technologies.vercel.app
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
 
 ---
 
@@ -109,7 +128,7 @@ zynthrop-technologies/
 
 - Email: ravishankarpatel431@gmail.com
 - LinkedIn: https://linkedin.com/in/ravi-shankar-patel
-- GitHub: https://github.com/ravishankar-patel
+- GitHub: https://github.com/Ravi-Patel-Builds
 
 ---
 
